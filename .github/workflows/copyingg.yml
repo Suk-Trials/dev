@@ -9,12 +9,12 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Pushes test file
+    - name: Pushes files from 'fold' directory
       uses: dmnemec/copy_file_to_another_repo_action@main
       env:
         API_TOKEN_GITHUB: ${{ secrets.SUKTRIAL_TOKEN }}
       with:
-        source_file: '/fold'
+        source_file: 'fold/'  # Specify the directory you want to copy
         destination_repo: 'Suk-Trials/test'
         user_email: 'eng21ct0039@dsu.edu.in'
         user_name: 's-sukriti'
