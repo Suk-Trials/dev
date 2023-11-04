@@ -14,7 +14,7 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.SUKTRIAL_TOKEN }}
       with:
-        source_file: '.github/workflows/''fold/'
+        source_repo: 'Khaanvani-Org/dev'
         destination_repo: 'Suk-Trials/test'
         user_email: 'eng21ct0039@dsu.edu.in'
         user_name: 's-sukriti'
