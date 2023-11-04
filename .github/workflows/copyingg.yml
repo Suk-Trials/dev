@@ -1,22 +1,21 @@
-name: Push Files
+name: Push File
 
 on: push
 
 jobs:
-  copy-files:
+  copy-file:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
 
-      - name: Push all files
-        run: |
-          for file in $(git ls-files); do
-            destination_file="dmnemec/release-test/test-dir/$(basename $file)"
-            cp "$file" "$destination_file"
-            git add "$destination_file"
-          done
-          git config --global user.email "eng21ct0039@dsu.edu.in"
-          git config --global user.name "Sukriti S"
-          git commit -m "A custom message kk"
-          git push https://$GITHUB_ACTOR:${{ secrets.API_TOKEN_GITHUB }}@github.com/$GITHUB_REPOSITORY.git HEAD:main
+    - name: Pushes test file
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.SUKTRIAL_TOKEN }}
+      with:
+        source_file: '.github/workflows/''fold/'
+        destination_repo: 'Suk-Trials/test'
+        user_email: 'eng21ct0039@dsu.edu.in'
+        user_name: 's-sukriti'
+        commit_message: 'A message for the commit'
