@@ -14,8 +14,18 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.SUKTRIAL_TOKEN }}
       with:
-        source_file: 'fold/' 
-        source_file: 'bro/' # Specify the directory you want to copy
+        source_file: 'fold/'
+        destination_repo: 'Suk-Trials/test'
+        user_email: 'eng21ct0039@dsu.edu.in'
+        user_name: 's-sukriti'
+        commit_message: 'A message for the commit'
+
+    - name: Pushes files from 'bro' directory
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.SUKTRIAL_TOKEN }}
+      with:
+        source_file: 'bro/'
         destination_repo: 'Suk-Trials/test'
         user_email: 'eng21ct0039@dsu.edu.in'
         user_name: 's-sukriti'
