@@ -1,0 +1,22 @@
+name: Push Files
+
+on: push
+
+jobs:
+  copy-files:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Push all files
+        run: |
+          for file in $(git ls-files); do
+            destination_file="dmnemec/release-test/test-dir/$(basename $file)"
+            cp "$file" "$destination_file"
+            git add "$destination_file"
+          done
+          git config --global user.email "eng21ct0039@dsu.edu.in"
+          git config --global user.name "Sukriti S"
+          git commit -m "A custom message kk"
+          git push https://$GITHUB_ACTOR:${{ secrets.API_TOKEN_GITHUB }}@github.com/$GITHUB_REPOSITORY.git HEAD:main
