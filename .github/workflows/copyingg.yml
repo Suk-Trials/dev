@@ -9,14 +9,53 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Pushes files from 'fold' directory
+    - name: readme
       uses: dmnemec/copy_file_to_another_repo_action@main
       env:
         API_TOKEN_GITHUB: ${{ secrets.SUKTRIAL_TOKEN }}
       with:
-        source_file: '.'
+        source_file: 'README.md'
         destination_repo: 'Suk-Trials/test'
         user_email: 'eng21ct0039@dsu.edu.in'
         user_name: 's-sukriti'
         commit_message: 'A message for the commit'
-
+    - name: filename
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.SUKTRIAL_TOKEN }}
+      with:
+        source_file: 'filename.py'
+        destination_repo: 'Suk-Trials/test'
+        user_email: 'eng21ct0039@dsu.edu.in'
+        user_name: 's-sukriti'
+        commit_message: 'A message for the commit'
+    - name: trial
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.SUKTRIAL_TOKEN }}
+      with:
+        source_file: 'trial.py'
+        destination_repo: 'Suk-Trials/test'
+        user_email: 'eng21ct0039@dsu.edu.in'
+        user_name: 's-sukriti'
+        commit_message: 'A message for the commit'
+    - name: bro
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.SUKTRIAL_TOKEN }}
+      with:
+        source_file: '/bro'
+        destination_repo: 'Suk-Trials/test'
+        user_email: 'eng21ct0039@dsu.edu.in'
+        user_name: 's-sukriti'
+        commit_message: 'A message for the commit'
+    - name: fold
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.SUKTRIAL_TOKEN }}
+      with:
+        source_file: '/fold'
+        destination_repo: 'Suk-Trials/test'
+        user_email: 'eng21ct0039@dsu.edu.in'
+        user_name: 's-sukriti'
+        commit_message: 'A message for the commit'
