@@ -44,7 +44,7 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.SUKTRIAL_TOKEN }}
       with:
-        source_file: '/bro'
+        source_file: 'bro/'
         destination_repo: 'Suk-Trials/test'
         user_email: 'eng21ct0039@dsu.edu.in'
         user_name: 's-sukriti'
@@ -54,7 +54,7 @@ jobs:
       env:
         API_TOKEN_GITHUB: ${{ secrets.SUKTRIAL_TOKEN }}
       with:
-        source_file: '/fold'
+        source_file: 'fold/'
         destination_repo: 'Suk-Trials/test'
         user_email: 'eng21ct0039@dsu.edu.in'
         user_name: 's-sukriti'
