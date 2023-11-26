@@ -16,7 +16,7 @@ jobs:
     - name: Install Snyk CLI
       run: |
         npm install -g snyk
-        snyk auth ${{ secrets.SNYK_TOKEN }}
+        snyk auth ${{ secrets.SUKTRIAL_TOKEN }}
 
     - name: Run Snyk IAST Test
       run: |
