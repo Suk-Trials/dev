@@ -1,0 +1,28 @@
+name: Snyk IAST Testing
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  snyk-iast-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Install Snyk CLI
+      run: |
+        npm install -g snyk
+        snyk auth ${{ secrets.SNYK_TOKEN }}
+
+    - name: Run Snyk IAST Test
+      run: |
+        # Example: Run Snyk IAST test command
+        snyk iast test --file=filename.py
+
+    # Add additional steps as needed
+
+# Add workflow configuration for other types of scans, integrations, etc.
